@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/maps.css')
+	
+	body
+		#map-canvas
+		// #map-overlay
+
+		- if (env == 'development')
+			script.
+				document.write('<script src="http://'+location.host.split(':')[0]+':35729/livereload.js"></'+'script>');
+
+			block scripts
+
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		script(src='/javascripts/earth.js')

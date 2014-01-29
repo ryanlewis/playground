@@ -1,0 +1,17 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/maps.css')
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcfwW59nwwJLgjznBxED9l09EptMJxCQQ&sensor=true"></script>
+	
+	body
+		#map-canvas
+
+		- if (env == 'development')
+			script.
+				document.write('<script src="http://'+location.host.split(':')[0]+':35729/livereload.js"></'+'script>');
+
+			block scripts
+
+		script(src='/javascripts/maps.js')

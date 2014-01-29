@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		block head
+	
+	body
+		block content
+
+		- if (env == 'development')
+			script.
+				document.write('<script src="http://'+location.host.split(':')[0]+':35729/livereload.js"></'+'script>');
+
+			block scripts
